@@ -118,6 +118,7 @@ public class TelaCadastroClienteController {
         System.out.println("Cliente cadastrado:");
         System.out.println("Nome: " + dadosClientes[0]);
         System.out.println("CPF: " + dadosClientes[1]);
+
         System.out.println("Telefone: " + dadosClientes[2]);
         System.out.println("CEP: " + dadosClientes[3]);
         System.out.println("E-mail: " + dadosClientes[4]);

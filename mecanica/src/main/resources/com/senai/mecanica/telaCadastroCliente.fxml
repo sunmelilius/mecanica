@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="574.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.senai.mecanica.TelaCadastroClienteController">
+
+    <Label layoutX="255.0" layoutY="54.0" text="Cadastrar Cliente" />
+
+    <Label layoutX="255.0" layoutY="93.0" text="Nome Completo." />
+
+    <TextField fx:id="txtNome" layoutX="223.0" layoutY="128.0" promptText="Digite aqui." />
+
+    <Label layoutX="286.0" layoutY="160.0" text="CPF:" />
+
+    <TextField fx:id="txtCPF" layoutX="226.0" layoutY="188.0" promptText="Digite aqui." />
+
+    <Label layoutX="273.0" layoutY="230.0" text="Telefone:" />
+
+    <TextField fx:id="txtTelefone" layoutX="226.0" layoutY="259.0" promptText="Digite aqui." />
+
+    <Label layoutX="259.0" layoutY="300.0" text="Endereço (CEP):" />
+
+    <TextField fx:id="txtCEP" layoutX="223.0" layoutY="331.0" promptText="Digite aqui." />
+
+    <Label layoutX="280.0" layoutY="375.0" text="E-mail:" />
+
+    <TextField fx:id="txtEmail" layoutX="223.0" layoutY="408.0" promptText="Digite aqui." />
+
+    <Button layoutX="238.0" layoutY="465.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+
+    <Button layoutX="301.0" layoutY="465.0" mnemonicParsing="false" text="Voltar" onAction="#voltar"/>
+
+    <Label fx:id="lblMensagem" layoutX="66.0" layoutY="517.0" prefHeight="17.0" prefWidth="469.0" text="" />
+
+</AnchorPane>

@@ -1,0 +1,230 @@
+
+/* =========================================
+   OFICINA MECÂNICA - ESTILO PRINCIPAL
+   JavaFX CSS
+   ========================================= */
+
+/* Fundo geral da aplicação */
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #f1f5f9;
+}
+
+/* Área de rolagem */
+.scroll-pane {
+    -fx-background-color: #f1f5f9;
+    -fx-background: #f1f5f9;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: #f1f5f9;
+}
+
+/* Título principal */
+.title {
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #12304a;
+}
+
+/* Subtítulo */
+.subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #64748b;
+}
+
+/* Títulos das seções */
+.titled-pane {
+    -fx-text-fill: #12304a;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.titled-pane > .title {
+    -fx-background-color: #e2eaf2;
+    -fx-background-radius: 8px 8px 0 0;
+    -fx-padding: 12px;
+}
+
+.titled-pane > .title > .arrow-button .arrow {
+    -fx-background-color: #12304a;
+}
+
+.titled-pane > .content {
+    -fx-background-color: white;
+    -fx-border-color: #dbe4ee;
+    -fx-border-width: 0 1px 1px 1px;
+    -fx-background-radius: 0 0 8px 8px;
+    -fx-border-radius: 0 0 8px 8px;
+    -fx-padding: 18px;
+}
+
+/* Rótulos */
+.label {
+    -fx-text-fill: #334155;
+}
+
+/* Campos de texto */
+.text-field,
+.text-area,
+.combo-box,
+.date-picker {
+    -fx-font-size: 13px;
+    -fx-background-color: white;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+}
+
+.text-field,
+.combo-box,
+.date-picker {
+    -fx-pref-height: 36px;
+}
+
+.text-field {
+    -fx-padding: 8px 10px;
+}
+
+.text-field:focused,
+.text-area:focused,
+.combo-box:focused,
+.date-picker:focused {
+    -fx-border-color: #1976d2;
+    -fx-border-width: 1.5px;
+    -fx-effect: dropshadow(gaussian, rgba(25, 118, 210, 0.12), 5, 0, 0, 1);
+}
+
+.text-area {
+    -fx-padding: 5px;
+}
+
+.text-area .content {
+    -fx-background-color: white;
+    -fx-background-radius: 6px;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+/* Tabelas */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #dbe4ee;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-table-cell-border-color: #e8edf3;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #eaf0f6;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: #eaf0f6;
+    -fx-size: 36px;
+    -fx-border-color: transparent #dbe4ee #dbe4ee transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #12304a;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-cell-size: 34px;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f8fafc;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #dbeafe;
+}
+
+.table-row-cell:selected .text {
+    -fx-fill: #12304a;
+}
+
+/* Botões gerais */
+.button {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-color: #e2e8f0;
+    -fx-text-fill: #334155;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-padding: 10px 18px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #cbd5e1;
+}
+
+.button:pressed {
+    -fx-background-color: #b8c5d6;
+}
+
+/* Botão principal */
+.primary-button {
+    -fx-background-color: #1769aa;
+    -fx-text-fill: white;
+}
+
+.primary-button:hover {
+    -fx-background-color: #12558b;
+}
+
+.primary-button:pressed {
+    -fx-background-color: #0d426e;
+}
+
+/* Botão de remover */
+.danger-button {
+    -fx-background-color: #dc3545;
+    -fx-text-fill: white;
+}
+
+.danger-button:hover {
+    -fx-background-color: #b02a37;
+}
+
+.danger-button:pressed {
+    -fx-background-color: #842029;
+}
+
+/* Valores totais */
+.total-label {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #12304a;
+}
+
+/* Espaçamento dos formulários */
+.grid-pane {
+    -fx-hgap: 12px;
+    -fx-vgap: 10px;
+}
+
+/* Seleção de itens e listas */
+.list-view {
+    -fx-background-color: white;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+}
+
+/* Mensagens e dicas dos campos */
+.text-field:disabled,
+.combo-box:disabled,
+.button:disabled {
+    -fx-opacity: 0.6;
+}

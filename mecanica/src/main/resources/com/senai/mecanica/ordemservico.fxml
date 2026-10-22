@@ -1,0 +1,230 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToWidth="true"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.senai.mecanica.OrdemServicoControler"
+            stylesheets="@css/style.css">
+
+    <content>
+        <VBox spacing="18" maxWidth="900">
+            <padding>
+                <Insets top="25" right="30" bottom="25" left="30"/>
+            </padding>
+
+            <Label text="ORDEM DE SERVIÇO" styleClass="title"/>
+            <Label text="Cadastro e acompanhamento de serviços"
+                   styleClass="subtitle"/>
+
+            <TitledPane text="1. Cliente e veículo" expanded="true">
+                <content>
+                    <GridPane hgap="12" vgap="10">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="25"/>
+                            <ColumnConstraints percentWidth="75"/>
+                        </columnConstraints>
+
+                        <Label text="Cliente:" GridPane.rowIndex="0"/>
+                        <ComboBox fx:id="clienteCombo"
+                                  promptText="Selecione o cliente"
+                                  maxWidth="Infinity"
+                                  GridPane.columnIndex="1"
+                                  GridPane.rowIndex="0"/>
+
+                        <Label text="CPF:" GridPane.rowIndex="1"/>
+                        <TextField fx:id="cpfField"
+                                   promptText="CPF do cliente"
+                                   GridPane.columnIndex="1"
+                                   GridPane.rowIndex="1"/>
+
+                        <Label text="Veículo:" GridPane.rowIndex="2"/>
+                        <ComboBox fx:id="veiculoCombo"
+                                  promptText="Selecione o veículo"
+                                  maxWidth="Infinity"
+                                  GridPane.columnIndex="1"
+                                  GridPane.rowIndex="2"/>
+
+                        <Label text="Placa:" GridPane.rowIndex="3"/>
+                        <TextField fx:id="placaField"
+                                   promptText="Placa do veículo"
+                                   GridPane.columnIndex="1"
+                                   GridPane.rowIndex="3"/>
+
+                        <Label text="Modelo:" GridPane.rowIndex="4"/>
+                        <TextField fx:id="modeloField"
+                                   promptText="Modelo do veículo"
+                                   GridPane.columnIndex="1"
+                                   GridPane.rowIndex="4"/>
+
+                        <Label text="Quilometragem:" GridPane.rowIndex="5"/>
+                        <TextField fx:id="quilometragemField"
+                                   promptText="Quilometragem atual"
+                                   GridPane.columnIndex="1"
+                                   GridPane.rowIndex="5"/>
+                    </GridPane>
+                </content>
+            </TitledPane>
+
+            <TitledPane text="2. Dados da ordem de serviço"
+                        expanded="true">
+                <content>
+                    <GridPane hgap="12" vgap="10">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="25"/>
+                            <ColumnConstraints percentWidth="75"/>
+                        </columnConstraints>
+
+                        <Label text="Número da OS:" GridPane.rowIndex="0"/>
+                        <TextField fx:id="numeroOsField"
+                                   promptText="Número da ordem"
+                                   GridPane.columnIndex="1"
+                                   GridPane.rowIndex="0"/>
+
+                        <Label text="Data de abertura:" GridPane.rowIndex="1"/>
+                        <DatePicker fx:id="dataField"
+                                    maxWidth="Infinity"
+                                    GridPane.columnIndex="1"
+                                    GridPane.rowIndex="1"/>
+
+                        <Label text="Tipo de serviço:" GridPane.rowIndex="2"/>
+                        <TextField fx:id="tipoServicoField"
+                                   promptText="Tipo de serviço"
+                                   GridPane.columnIndex="1"
+                                   GridPane.rowIndex="2"/>
+
+                        <Label text="Descrição:" GridPane.rowIndex="3"/>
+                        <TextArea fx:id="descricaoField"
+                                  promptText="Descreva o problema do veículo"
+                                  prefRowCount="3"
+                                  wrapText="true"
+                                  GridPane.columnIndex="1"
+                                  GridPane.rowIndex="3"/>
+
+                        <Label text="Produtos utilizados:"
+                               GridPane.rowIndex="4"/>
+                        <TextArea fx:id="produtosField"
+                                  promptText="Informe os produtos utilizados"
+                                  prefRowCount="2"
+                                  wrapText="true"
+                                  GridPane.columnIndex="1"
+                                  GridPane.rowIndex="4"/>
+
+                        <Label text="Mão de obra (R$):"
+                               GridPane.rowIndex="5"/>
+                        <TextField fx:id="maoObraField"
+                                   promptText="0,00"
+                                   GridPane.columnIndex="1"
+                                   GridPane.rowIndex="5"/>
+                    </GridPane>
+                </content>
+            </TitledPane>
+
+            <TitledPane text="3. Serviços adicionados" expanded="true">
+                <content>
+                    <VBox spacing="10">
+                        <GridPane hgap="10" vgap="8">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="65"/>
+                                <ColumnConstraints percentWidth="35"/>
+                            </columnConstraints>
+
+                            <Label text="Nome do serviço"
+                                   GridPane.rowIndex="0"/>
+                            <Label text="Preço (R$)"
+                                   GridPane.columnIndex="1"
+                                   GridPane.rowIndex="0"/>
+
+                            <TextField fx:id="nomeServicoField"
+                                       promptText="Ex.: Troca de óleo"
+                                       GridPane.rowIndex="1"/>
+
+                            <TextField fx:id="precoServicoField"
+                                       promptText="0,00"
+                                       GridPane.columnIndex="1"
+                                       GridPane.rowIndex="1"/>
+                        </GridPane>
+
+                        <HBox spacing="10">
+                            <Button text="Adicionar serviço"
+                                    onAction="#adicionarServico"
+                                    styleClass="primary-button"/>
+                            <Button text="Remover serviço"
+                                    onAction="#removerServico"
+                                    styleClass="danger-button"/>
+                        </HBox>
+
+                        <TableView fx:id="servicosTable"
+                                   prefHeight="180">
+                            <columns>
+                                <TableColumn fx:id="nomeColumn"
+                                             text="Serviço"
+                                             prefWidth="400"/>
+                                <TableColumn fx:id="precoColumn"
+                                             text="Preço (R$)"
+                                             prefWidth="180"/>
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </content>
+            </TitledPane>
+
+            <TitledPane text="4. Valores e status" expanded="true">
+                <content>
+                    <GridPane hgap="12" vgap="12">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="40"/>
+                            <ColumnConstraints percentWidth="60"/>
+                        </columnConstraints>
+
+                        <Label text="Total dos serviços:"
+                               GridPane.rowIndex="0"/>
+                        <Label fx:id="totalServicosLabel"
+                               text="R$ 0,00"
+                               GridPane.columnIndex="1"
+                               GridPane.rowIndex="0"/>
+
+                        <Label text="Mão de obra:"
+                               GridPane.rowIndex="1"/>
+                        <Label fx:id="maoObraTotalLabel"
+                               text="R$ 0,00"
+                               GridPane.columnIndex="1"
+                               GridPane.rowIndex="1"/>
+
+                        <Label text="TOTAL DA OS:"
+                               styleClass="total-label"
+                               GridPane.rowIndex="2"/>
+                        <Label fx:id="totalGeralLabel"
+                               text="R$ 0,00"
+                               styleClass="total-label"
+                               GridPane.columnIndex="1"
+                               GridPane.rowIndex="2"/>
+
+                        <Label text="Status:"
+                               GridPane.rowIndex="3"/>
+                        <ComboBox fx:id="statusCombo"
+                                  promptText="Selecione o status"
+                                  maxWidth="Infinity"
+                                  GridPane.columnIndex="1"
+                                  GridPane.rowIndex="3"/>
+                    </GridPane>
+                </content>
+            </TitledPane>
+
+            <HBox spacing="12" alignment="CENTER_RIGHT">
+                <Button text="Abrir OS"
+                        onAction="#abrirOrdemServico"
+                        styleClass="primary-button"/>
+                <Button text="Limpar"
+                        onAction="#limparFormulario"/>
+                <Button text="Voltar"
+                        onAction="#voltar"/>
+            </HBox>
+
+        </VBox>
+    </content>
+</ScrollPane>

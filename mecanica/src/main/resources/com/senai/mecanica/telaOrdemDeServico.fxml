@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+                        xmlns:fx="http://javafx.com/fxml/1"
+                        fx:controller="com.senai.mecanica.OrdemServicoControler"
+                        prefHeight="800.0"
+                        prefWidth="900.0"
+                        style="-fx-background-color: #f1f5f9;">
+
+    <top>
+        <VBox spacing="5"
+              style="-fx-background-color: #1e3a5f;">
+            <padding>
+                <Insets top="20" right="25" bottom="20" left="25"/>
+            </padding>
+
+            <Label text="OFICINA MECÂNICA"
+                   style="-fx-text-fill: #93c5fd;
+                          -fx-font-size: 12px;
+                          -fx-font-weight: bold;"/>
+
+            <Label text="ORDEM DE SERVIÇO"
+                   style="-fx-text-fill: white;
+                          -fx-font-size: 24px;
+                          -fx-font-weight: bold;"/>
+
+            <Label text="Cadastro e gerenciamento de serviços"
+                   style="-fx-text-fill: white;
+                          -fx-font-size: 13px;"/>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true"
+                    hbarPolicy="NEVER">
+
+            <content>
+                <VBox spacing="15">
+                    <padding>
+                        <Insets top="20" right="25"
+                                bottom="25" left="25"/>
+                    </padding>
+
+                    <!-- DADOS DO CLIENTE -->
+                    <TitledPane text="1. Dados do cliente"
+                                expanded="true">
+
+                        <content>
+                            <GridPane hgap="12" vgap="10">
+                                <padding>
+                                    <Insets top="12" right="12"
+                                            bottom="12" left="12"/>
+                                </padding>
+
+                                <Label text="Cliente:"
+                                       GridPane.rowIndex="0"/>
+
+                                <ComboBox fx:id="clienteCombo"
+                                          promptText="Selecione o cliente"
+                                          prefWidth="400"
+                                          GridPane.columnIndex="1"
+                                          GridPane.rowIndex="0"/>
+
+                                <Label text="CPF:"
+                                       GridPane.rowIndex="1"/>
+
+                                <TextField fx:id="cpfField"
+                                           promptText="CPF do cliente"
+                                           GridPane.columnIndex="1"
+                                           GridPane.rowIndex="1"/>
+                            </GridPane>
+                        </content>
+                    </TitledPane>
+
+                    <!-- DADOS DO VEÍCULO -->
+                    <TitledPane text="2. Dados do veículo"
+                                expanded="true">
+
+                        <content>
+                            <GridPane hgap="12" vgap="10">
+                                <padding>
+                                    <Insets top="12" right="12"
+                                            bottom="12" left="12"/>
+                                </padding>
+
+                                <Label text="Veículo:"
+                                       GridPane.rowIndex="0"/>
+
+                                <ComboBox fx:id="veiculoCombo"
+                                          promptText="Selecione o veículo"
+                                          prefWidth="400"
+                                          GridPane.columnIndex="1"
+                                          GridPane.rowIndex="0"/>
+
+                                <Label text="Placa:"
+                                       GridPane.rowIndex="1"/>
+
+                                <TextField fx:id="placaField"
+                                           promptText="Placa do veículo"
+                                           GridPane.columnIndex="1"
+                                           GridPane.rowIndex="1"/>
+
+                                <Label text="Modelo:"
+                                       GridPane.rowIndex="2"/>
+
+                                <TextField fx:id="modeloField"
+                                           promptText="Modelo do veículo"
+                                           GridPane.columnIndex="1"
+                                           GridPane.rowIndex="2"/>
+
+                                <Label text="Quilometragem:"
+                                       GridPane.rowIndex="3"/>
+
+                                <TextField fx:id="quilometragemField"
+                                           promptText="Quilometragem atual"
+                                           GridPane.columnIndex="1"
+                                           GridPane.rowIndex="3"/>
+                            </GridPane>
+                        </content>
+                    </TitledPane>
+
+                    <!-- DADOS DA ORDEM DE SERVIÇO -->
+                    <TitledPane text="3. Dados da ordem de serviço"
+                                expanded="true">
+
+                        <content>
+                            <GridPane hgap="12" vgap="10">
+                                <padding>
+                                    <Insets top="12" right="12"
+                                            bottom="12" left="12"/>
+                                </padding>
+
+                                <Label text="Número da OS:"
+                                       GridPane.rowIndex="0"/>
+
+                                <TextField fx:id="numeroOsField"
+                                           promptText="Número da OS"
+                                           GridPane.columnIndex="1"
+                                           GridPane.rowIndex="0"/>
+
+                                <Label text="Data:"
+                                       GridPane.rowIndex="1"/>
+
+                                <DatePicker fx:id="dataField"
+                                            GridPane.columnIndex="1"
+                                            GridPane.rowIndex="1"/>
+
+                                <Label text="Tipo de serviço:"
+                                       GridPane.rowIndex="2"/>
+
+                                <TextField fx:id="tipoServicoField"
+                                           promptText="Tipo de serviço"
+                                           GridPane.columnIndex="1"
+                                           GridPane.rowIndex="2"/>
+
+                                <Label text="Descrição:"
+                                       GridPane.rowIndex="3"/>
+
+                                <TextArea fx:id="descricaoField"
+                                          promptText="Descreva o problema do veículo"
+                                          prefRowCount="3"
+                                          wrapText="true"
+                                          GridPane.columnIndex="1"
+                                          GridPane.rowIndex="3"/>
+
+                                <Label text="Produtos utilizados:"
+                                       GridPane.rowIndex="4"/>
+
+                                <TextArea fx:id="produtosField"
+                                          promptText="Informe os produtos utilizados"
+                                          prefRowCount="2"
+                                          wrapText="true"
+                                          GridPane.columnIndex="1"
+                                          GridPane.rowIndex="4"/>
+                            </GridPane>
+                        </content>
+                    </TitledPane>
+
+                    <!-- CADASTRO DE SERVIÇOS -->
+                    <TitledPane text="4. Cadastro de serviços"
+                                expanded="true">
+
+                        <content>
+                            <VBox spacing="12">
+                                <padding>
+                                    <Insets top="12" right="12"
+                                            bottom="12" left="12"/>
+                                </padding>
+
+                                <GridPane hgap="12" vgap="8">
+                                    <columnConstraints>
+                                        <ColumnConstraints percentWidth="60"/>
+                                        <ColumnConstraints percentWidth="40"/>
+                                    </columnConstraints>
+
+                                    <Label text="Nome do serviço"
+                                           GridPane.rowIndex="0"/>
+
+                                    <Label text="Preço (R$)"
+                                           GridPane.columnIndex="1"
+                                           GridPane.rowIndex="0"/>
+
+                                    <TextField fx:id="nomeServicoField"
+                                               promptText="Ex.: Troca de óleo"
+                                               GridPane.rowIndex="1"/>
+
+                                    <TextField fx:id="precoServicoField"
+                                               promptText="Ex.: 150,00"
+                                               GridPane.columnIndex="1"
+                                               GridPane.rowIndex="1"/>
+                                </GridPane>
+
+                                <HBox spacing="10">
+                                    <Button text="Adicionar serviço"
+                                            onAction="#adicionarServico"/>
+
+                                    <Button text="Remover serviço"
+                                            onAction="#removerServico"/>
+                                </HBox>
+
+                                <TableView fx:id="servicosTable"
+                                           prefHeight="180">
+                                    <columns>
+                                        <TableColumn fx:id="nomeColumn"
+                                                     text="Serviço"
+                                                     prefWidth="400"/>
+
+                                        <TableColumn fx:id="precoColumn"
+                                                     text="Preço (R$)"
+                                                     prefWidth="180"/>
+                                    </columns>
+                                </TableView>
+                            </VBox>
+                        </content>
+                    </TitledPane>
+
+                    <!-- VALORES E STATUS -->
+                    <TitledPane text="5. Valores e status"
+                                expanded="true">
+
+                        <content>
+                            <GridPane hgap="12" vgap="12">
+                                <padding>
+                                    <Insets top="12" right="12"
+                                            bottom="12" left="12"/>
+                                </padding>
+
+                                <Label text="Mão de obra (R$):"
+                                       GridPane.rowIndex="0"/>
+
+                                <TextField fx:id="maoObraField"
+                                           promptText="0,00"
+                                           GridPane.columnIndex="1"
+                                           GridPane.rowIndex="0"/>
+
+                                <Label text="Total dos serviços:"
+                                       GridPane.rowIndex="1"/>
+
+                                <Label fx:id="totalServicosLabel"
+                                       text="R$ 0,00"
+                                       GridPane.columnIndex="1"
+                                       GridPane.rowIndex="1"/>
+
+                                <Label text="Total da mão de obra:"
+                                       GridPane.rowIndex="2"/>
+
+                                <Label fx:id="maoObraTotalLabel"
+                                       text="R$ 0,00"
+                                       GridPane.columnIndex="1"
+                                       GridPane.rowIndex="2"/>
+
+                                <Label text="TOTAL GERAL:"
+                                       style="-fx-font-size: 16px;
+                                              -fx-font-weight: bold;"
+                                       GridPane.rowIndex="3"/>
+
+                                <Label fx:id="totalGeralLabel"
+                                       text="R$ 0,00"
+                                       style="-fx-font-size: 20px;
+                                              -fx-font-weight: bold;
+                                              -fx-text-fill: #15803d;"
+                                       GridPane.columnIndex="1"
+                                       GridPane.rowIndex="3"/>
+
+                                <Label text="Status:"
+                                       GridPane.rowIndex="4"/>
+
+                                <ComboBox fx:id="statusCombo"
+                                          prefWidth="400"
+                                          GridPane.columnIndex="1"
+                                          GridPane.rowIndex="4"/>
+                            </GridPane>
+                        </content>
+                    </TitledPane>
+
+                    <!-- BOTÕES -->
+                    <HBox spacing="10"
+                          alignment="CENTER_RIGHT">
+
+                        <Button text="Abrir ordem de serviço"
+                                onAction="#abrirOrdemServico"
+                                style="-fx-background-color: #15803d;
+                                       -fx-text-fill: white;
+                                       -fx-font-weight: bold;"/>
+
+                        <Button text="Limpar formulário"
+                                onAction="#limparFormulario"/>
+
+                        <Button text="Voltar"
+                                onAction="#voltar"/>
+                    </HBox>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

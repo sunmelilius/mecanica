@@ -5,4 +5,5 @@ module com.senai.mecanica {
 
     opens com.senai.mecanica to javafx.fxml;
     exports com.senai.mecanica;
+    
 }

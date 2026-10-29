@@ -31,4 +31,28 @@ public class Tela2Controller {
 
         }
     }
+
+    @FXML
+    private void ordenDeServico() {
+
+        try {
+
+            FXMLLoader fxmlLoader = new FXMLLoader(
+                    getClass().getResource("ordemservico.fxml")
+            );
+
+            Parent tela2 = fxmlLoader.load();
+
+            Stage stage = new Stage();
+
+            stage.setScene(new Scene(tela2));
+
+            stage.show();
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+    }
 }

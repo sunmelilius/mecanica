@@ -44,8 +44,29 @@ public class HelloController {
 
         } else {
 
-            System.out.println("Incorreto.");
+            System.out.println("Digite um login ou senha valido.");
 
+        }
+        if  (login.equals("admin") && senha.equals("1234")) {
+            try {
+
+                FXMLLoader fxmlLoader = new FXMLLoader(
+                        getClass().getResource("tela2.fxml")
+                );
+
+                Parent tela2 = fxmlLoader.load();
+
+                Stage stage = (Stage) txtLogin.getScene().getWindow();
+
+                stage.setScene(new Scene(tela2));
+
+            } catch (Exception e) {
+
+                e.printStackTrace();
+
+            }
+        } else {
+            System.out.println("Digite um login ou senha valido.");
         }
     }
 }

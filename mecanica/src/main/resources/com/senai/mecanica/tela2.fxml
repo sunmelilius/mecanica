@@ -14,7 +14,7 @@
 
     <Button onAction="#cadastrarCliente" styleClass="botao" text="Cadastrar Cliente." />
 
-    <Button styleClass="botao" text="CARROS" />
+    <Button onAction="#cadastrarVeiculo" styleClass="botao" text="CARROS" />
 
     <Button onAction="#ordenDeServico" styleClass="botao" text="ORDENS DE SERVIÇO" />
 

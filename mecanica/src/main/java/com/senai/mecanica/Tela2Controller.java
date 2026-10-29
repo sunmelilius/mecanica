@@ -55,4 +55,35 @@ public class Tela2Controller {
 
         }
     }
+
+    @FXML
+    private void cadastrarVeiculo() {
+        try {
+
+
+            FXMLLoader fxmlLoader = new FXMLLoader(
+                    getClass().getResource("telaCadastroVeiculo.fxml")
+            );
+
+
+            Parent tela2 = fxmlLoader.load();
+
+
+            Stage stage = new Stage();
+
+
+            stage.setScene(new Scene(tela2));
+
+
+            stage.show();
+
+
+        } catch (Exception e) {
+
+
+            e.printStackTrace();
+
+
+        }
+    }
 }
